@@ -191,4 +191,26 @@ class BouncyProtractorView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BouncyProtractorView) {
+
+        private val animator : Animator = Animator(view)
+        private val bp : BouncyProtractor = BouncyProtractor(0)
+
+        fun render(canvas : Canvas, paint : Paint) {
+            canvas.drawColor(backColor)
+            bp.draw(canvas, paint)
+            animator.animate {
+                bp.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bp.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
