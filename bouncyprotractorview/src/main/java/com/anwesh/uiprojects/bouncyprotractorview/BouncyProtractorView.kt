@@ -214,4 +214,13 @@ class BouncyProtractorView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BouncyProtractorView {
+            val view : BouncyProtractorView = BouncyProtractorView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
