@@ -15,14 +15,14 @@ import android.content.Context
 
 val nodes : Int = 5
 val lines : Int = 2
-val scGap : Float = 0.02f
+val scGap : Float = 0.02f / lines
 val sizeFactor : Float = 2.9f
 val backColor : Int = Color.parseColor("#BDBDBD")
 val foreColor : Int = Color.parseColor("#311B92")
 val strokeFactor : Int = 90
-val delay : Long = 20
+val delay : Long = 15
 val rFactor : Float = 3.2f
-val deg : Float = -60f
+val deg : Float = -30f
 val sweepDeg : Float = 360f
 
 fun Int.inverse() : Float = 1f / this
